@@ -1,0 +1,110 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="VoiceShortcuts.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Voice Shortcuts" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="List of Commands" Margin="9,-7,0,0" FontSize="55" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock>Start each command with the word "Phone"</TextBlock>
+                <ListBox BorderBrush="Yellow" BorderThickness="2" Height="480" Margin="5,10,5,20">
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold" HorizontalAlignment="Center">Start Wifi</TextBlock>
+                                <TextBlock>[open] wifi [task]</TextBlock>
+                                <TextBlock>[open] wifi [task]</TextBlock>
+                                <TextBlock>[open] wifi [settings]</TextBlock>
+                                <TextBlock>[start] wifi [task]</TextBlock>
+                                <TextBlock>[start] wifi [settings]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold"  HorizontalAlignment="Center">Start Cellular</TextBlock>
+                                <TextBlock>[open] cellular [task]</TextBlock>
+                                <TextBlock>[open] cellular [settings]</TextBlock>
+                                <TextBlock>[start] cellular [task]</TextBlock>
+                                <TextBlock>[start] cellular [settings]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold"  HorizontalAlignment="Center">Start AirPlane Mode</TextBlock>
+                                <TextBlock>[open] airplane [task]</TextBlock>
+                                <TextBlock>[open] airplane [settings]</TextBlock>
+                                <TextBlock>[start] airplane [task]</TextBlock>
+                                <TextBlock>[start] airplane [settings]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold"  HorizontalAlignment="Center">Start Bluetooth Mode</TextBlock>
+                                <TextBlock>[open] bluetooth [task]</TextBlock>
+                                <TextBlock>[open] bluetooth [settings]</TextBlock>
+                                <TextBlock>[start] bluetooth [task]</TextBlock>
+                                <TextBlock>[start] wifibluetooth [settings]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold"  HorizontalAlignment="Center">Speak Battery Level</TextBlock>
+                                <TextBlock>[open] battery [level]</TextBlock>
+                                <TextBlock>[get] battery [level]</TextBlock>
+                                <TextBlock>[give] [me] [the] battery [level]</TextBlock>
+                                <TextBlock>[what's] [the] [current] battery [level]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <Border BorderBrush="Red" BorderThickness="1" Width="450">
+                            <StackPanel>
+                                <TextBlock Foreground="Red" FontWeight="Bold"  HorizontalAlignment="Center">Speak Battery Time</TextBlock>
+                                <TextBlock>[open] battery [time]</TextBlock>
+                                <TextBlock>[get] battery [time]</TextBlock>
+                                <TextBlock>[give] [me] [the] battery [time]</TextBlock>
+                                <TextBlock>[what's] [the] [current] battery [time]</TextBlock>
+                                <TextBlock>[how] [much] [will] [the] battery [last]</TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ListBoxItem>
+                </ListBox>
+                <TextBlock>*[word] - optional word</TextBlock>
+                <TextBlock>Example: "Phone, Open Wifi"</TextBlock>
+                <TextBlock>It's the same with "Phone, Wifi"</TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

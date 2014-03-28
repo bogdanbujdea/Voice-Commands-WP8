@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="VoiceShortcuts.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    BackKeyPress="OnBackKeyPress"
+    shell:SystemTray.IsVisible="True">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Voice Shortcuts" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Shortcuts" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Background="{StaticResource PhoneAccentBrush}" BorderThickness="0" Click="WifiTap">
+                    <Image Source="Images/wifi.png" Name="WifiImage"></Image>
+                </Button>
+                <Button Background="{StaticResource PhoneAccentBrush}" Grid.Column="1" BorderThickness="0" Click="AirPlaneModeTap">
+                    <Image Source="Images/plane.png" Name="CelImage"></Image>
+                </Button>
+                <Button Background="{StaticResource PhoneAccentBrush}" Grid.Row="1" BorderThickness="0" Click="CellularTap">
+                    <Image Source="Images/net.png" Name="AirImage"></Image>
+                </Button>
+                <Button Background="{StaticResource PhoneAccentBrush}" Grid.Column="1" Grid.Row="1" BorderThickness="0" Click="BluetoothTap">
+                    <Image Source="Images/bluetooth.png" Name="BlueImage"></Image>
+                </Button>
+            </Grid>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Remaining battery life: "></TextBlock>
+                    <TextBlock Name="TextBatteryPercent"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Estimated time remaining: "></TextBlock>
+                    <TextBlock Name="TextBatteryTime"></TextBlock>
+                </StackPanel>
+                
+            </StackPanel>
+            <Grid Grid.Row="2" Name="NaxAdGrid"></Grid>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

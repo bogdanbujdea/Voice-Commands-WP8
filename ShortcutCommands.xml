@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-US">
+    <CommandPrefix>Phone</CommandPrefix>
+    <Example>Phone launch Wifi</Example>
+
+    <Command Name="Open Wifi">
+      <Example> open wifi </Example>
+      <ListenFor> [open] wifi [task] </ListenFor>
+      <ListenFor> [open] wifi [settings] </ListenFor>
+      <ListenFor> [start] wifi [task] </ListenFor>
+      <ListenFor> [start] wifi [settings] </ListenFor>
+      <Feedback> Starting Wifi... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+    <Command Name="Open Cellular">
+      <Example> open cellular </Example>
+      <ListenFor> [open] cellular [task] </ListenFor>
+      <ListenFor> [open] cellular [settings] </ListenFor>
+      <ListenFor> [start] cellular [task] </ListenFor>
+      <ListenFor> [start] cellular [settings] </ListenFor>
+      <Feedback> Starting Cellular... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="Open Airplane">
+      <Example> open airplane </Example>
+      <ListenFor> [open] airplane [task] </ListenFor>
+      <ListenFor> [open] airplane [settings] </ListenFor>
+      <ListenFor> [start] airplane [task] </ListenFor>
+      <ListenFor> [start] airplane [settings] </ListenFor>
+      <Feedback> Starting AirPlane Settings... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="Open Bluetooth">
+      <Example> open bluetooth </Example>
+      <ListenFor> [open] bluetooth [task] </ListenFor>
+      <ListenFor> [open] bluetooth [settings] </ListenFor>
+      <ListenFor> [start] bluetooth [task] </ListenFor>
+      <ListenFor> [start] wifibluetooth [settings] </ListenFor>
+      <Feedback> Starting Bluetooth Settings... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="Get Battery Level">
+      <Example> get battery level </Example>
+      <ListenFor> [open] battery [level] </ListenFor>
+      <ListenFor> [get] battery [level] </ListenFor>
+      <ListenFor> [give] [me] [the] battery [level] </ListenFor>
+      <ListenFor> [what's] [the] [current] battery [level] </ListenFor>
+      <Feedback> Let me see... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="Get Battery Time">
+      <Example> get battery time </Example>
+      <ListenFor> [open] battery [time] </ListenFor>
+      <ListenFor> [get] battery [time] </ListenFor>
+      <ListenFor> [give] [me] [the] battery [time] </ListenFor>
+      <ListenFor> [what's] [the] [current] battery [time] </ListenFor>
+      <ListenFor> [how] [much] [will] [the] battery [last] </ListenFor>
+      <Feedback> Checking battery time... </Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+  </CommandSet>
+</VoiceCommands>
+
+<!-- Example -->
+<!--
+
+    The preceding example demonstrates a hypothetical game called 'Contoso ROD3O!' which defines two
+    Commands that a user can say to either start a new game or replay one of three levels in the game.  
+    To initiate the PlayGame command, a user can say "Contoso Rodeo play  a new game" or "Contoso Rodeo
+    play new game". Either phrase will start a new game. To initiate the second Command, a user can say
+    "Contoso Rodeo replay level one", "Contoso Rodeo replay level two", or "Contoso Rodeo replay level 
+    three".
+    The second Command demonstrates how to use a PhraseList with a Command. PhraseLists can be updated 
+    dynamically by the application (e.g., if a user unlocks a new level or game or feature, you might 
+    want to allow the user to give commands for newfeatures after voice commands are already registered.)
+    The third Command demonstrates how the {*} sequence can parallel another command to recognize speech
+    that is not defined in the CommandSet.
+
+  Note:
+
+      [and] Indicates that "and" is optional. Making connecting words like this optional
+            can help both "Contoso Rodeo, play new game" and "open Contoso Rodeo and play
+            a new game" feel natural to speak.
+                 
+      {number} Defined separately from the Command, mapping to "one" or "two" or "three".
+
+-->
