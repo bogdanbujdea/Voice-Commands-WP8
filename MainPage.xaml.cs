@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Inneractive.Ad;
@@ -10,12 +11,15 @@ using Microsoft.Phone.Shell;
 using Windows.Phone.Speech.Synthesis;
 using Windows.Phone.Speech.VoiceCommands;
 using Windows.Phone.Devices.Power;
+using AppPromo;
+using Microsoft.Phone.Tasks;
 
 namespace VoiceShortcuts
 {
     public partial class MainPage : PhoneApplicationPage
     {
         private VibrateController _vc;
+
         // Constructor
         public MainPage()
         {
@@ -162,6 +166,41 @@ namespace VoiceShortcuts
         private void OnBackKeyPress(object sender, CancelEventArgs e)
         {
             Application.Current.Terminate();
+        }
+
+        private void OnTryReminderCompleted(object sender, RateReminderResult e)
+        {
+            if (e.Runs == 5)
+            {
+                var reschedule = RescheduleRating(e.RatingShown);
+                if (reschedule)
+                {
+                    RateReminder.ResetCounters();
+                    RateReminder.RunsBeforeReminder = 5;
+                }
+            }
+        }
+
+        private bool RescheduleRating(bool ratingShown)
+        {
+            if (ratingShown == false)
+            {
+                var messageBoxResult = MessageBox.Show(
+                    "Would you like to send us some feedback through email?", "feedback",
+                    MessageBoxButton.OKCancel);
+                if (messageBoxResult == MessageBoxResult.OK)
+                {
+                    EmailComposeTask task = new EmailComposeTask();
+                    task.To = "bujdeabogdan@gmail.com";
+                    task.Subject = "Voice Shortcuts Feedback";
+                    task.Show();
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
