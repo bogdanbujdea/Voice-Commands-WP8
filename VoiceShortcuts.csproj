@@ -15,7 +15,8 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures></SupportedCultures>
+    <SupportedCultures>
+    </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>VoiceShortcuts_$(Configuration)_$(Platform).xap</XapFilename>
@@ -122,6 +123,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -171,6 +173,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AppPromo.WP8">
+      <HintPath>packages\AppPromo.WP8.1.0.0.5\lib\wp8\AppPromo.WP8.dll</HintPath>
+    </Reference>
     <Reference Include="Inneractive.Ad">
       <HintPath>Resources\Inneractive.Ad.dll</HintPath>
     </Reference>

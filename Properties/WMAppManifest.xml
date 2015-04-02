@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{49965b25-bf7b-4de8-8373-5380ed3b809a}" Title="Voice Shortcuts" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Bogdan Bujdea" Description="Simple app for launching tasks with voice commands." Publisher="Bogdan Bujdea" PublisherID="{b400e055-0cff-460b-8241-2c52ea49f368}">
+  <App xmlns="" ProductID="{49965b25-bf7b-4de8-8373-5380ed3b809a}" Title="Voice Shortcuts" RuntimeType="Silverlight" Version="1.2.0.0" Genre="apps.normal" Author="Bogdan Bujdea" Description="Simple app for launching tasks with voice commands." Publisher="Bogdan Bujdea" PublisherID="{b400e055-0cff-460b-8241-2c52ea49f368}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,7 +11,7 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" ActivationPolicy="Resume" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="VoiceShortcutsToken" TaskName="_default">

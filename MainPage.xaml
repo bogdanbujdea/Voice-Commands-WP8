@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:appPromo="clr-namespace:AppPromo;assembly=AppPromo.WP8"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -18,6 +19,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <appPromo:RateReminder x:Name="RateReminder"
+                               CustomReminderText="Would you like to give us a rating? It really helps us improve the app! Thank you!"
+                               RunsBeforeReminder="5"
+                               TryReminderCompleted="OnTryReminderCompleted" />
+
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Voice Shortcuts" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="Shortcuts" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
